@@ -1,0 +1,17 @@
+@import "src/index.scss";
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $cell-width;
+  height: $cell-height;
+}
+
+.black {
+  background-color: $dark-color;
+}
+
+.white {
+  background-color: $light-color;
+}

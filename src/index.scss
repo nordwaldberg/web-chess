@@ -1,0 +1,20 @@
+/*variables*/
+$main-color: #3498DB;
+$light-color: #ECF0F1;
+$dark-color: #333333;
+$cell-width: 65px;
+$cell-height: 65px;
+
+/*reset*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: $main-color;
+}
+
+#root {}
