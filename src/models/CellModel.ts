@@ -7,8 +7,8 @@ export class CellModel {
     readonly coordinateX: number;
     readonly coordinateY: number;
     readonly color: Colors;
-    readonly figure: Figure | null;
-    readonly board: BoardModel;
+    figure: Figure | null;
+    board: BoardModel;
 
     avaliable: boolean;
     id: string;

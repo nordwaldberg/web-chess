@@ -13,6 +13,7 @@ function App() {
     function restart() {
         const newBoard = new BoardModel();
         newBoard.InitCells();
+        newBoard.addFigures();
         setBoard(newBoard);
     }
 

@@ -8,7 +8,9 @@ interface CellProps {
 
 const Cell: FC<CellProps> = ({cell}) => {
     return (
-        <div className={`${styles.cell} ${styles[cell.color]}`}></div>
+        <div className={`${styles.cell} ${styles[cell.color]}`}>
+            {cell.figure?.icon && <img src={cell.figure.icon} alt={cell.figure.name}/>}
+        </div>
     );
 };
 

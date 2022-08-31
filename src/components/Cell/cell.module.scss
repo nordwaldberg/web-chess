@@ -8,6 +8,11 @@
   height: $cell-height;
 }
 
+.cell img {
+  width: $icon-width;
+  height: $icon-height;
+}
+
 .black {
   background-color: $dark-color;
 }
