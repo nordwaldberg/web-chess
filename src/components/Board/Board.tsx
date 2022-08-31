@@ -1,15 +1,28 @@
-import React from "react";
+import React, {FC} from "react";
 import styles from './board.module.scss';
 import Cell from "../Cell/Cell";
+import {BoardModel} from "../../models/BoardModel";
 
-const Board = () => {
+interface BoardProps {
+    board: BoardModel,
+    setBoard: (board: BoardModel) => void,
+}
+
+const Board: FC<BoardProps> = ({board, setBoard}) => {
     return (
-      <div className={styles.board}>
-        <Cell color="black"></Cell>
-        <Cell color="white"></Cell>
-        <Cell color="black"></Cell>
-        <Cell color="white"></Cell>
-      </div>
+        <div className={styles.board}>
+            {
+                board.cells.map((row, index) =>
+                    <React.Fragment key={index}>
+                        {
+                            row.map((cell) =>
+                                <Cell cell={cell} key={cell.id}/>
+                            )
+                        }
+                    </React.Fragment>
+                )
+            }
+        </div>
     );
 };
 

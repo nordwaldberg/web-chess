@@ -1,15 +1,14 @@
-import React from "react";
+import React, {FC} from "react";
 import styles from './cell.module.scss';
+import {CellModel} from "../../models/CellModel";
 
 interface CellProps {
-    color: string
+    cell: CellModel,
 }
 
-const Cell = ({ color }: CellProps) => {
+const Cell: FC<CellProps> = ({cell}) => {
     return (
-        <div className={`${styles.cell} ${styles[color]}`}>
-
-        </div>
+        <div className={`${styles.cell} ${styles[cell.color]}`}></div>
     );
 };
 
