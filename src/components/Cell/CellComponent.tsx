@@ -5,10 +5,10 @@ import {Cell} from "../../models/Cell";
 interface CellProps {
     cell: Cell,
     selected: boolean,
-    selectCell: (cell: Cell) => void,
+    clickOnCell: (cell: Cell) => void,
 }
 
-const CellComponent: FC<CellProps> = ({cell, selected, selectCell}) => {
+const CellComponent: FC<CellProps> = ({cell, selected, clickOnCell}) => {
     const isSelectedCell = selected ? styles.selected : '';
 
     const isAvailableCell = cell.avaliable && !cell.figure ?
@@ -19,7 +19,7 @@ const CellComponent: FC<CellProps> = ({cell, selected, selectCell}) => {
 
     return (
         <div className={`${styles.cell} ${styles[cell.color]} ${isSelectedCell}`}
-            onClick={() => selectCell(cell)}
+            onClick={() => clickOnCell(cell)}
         >
             {isAvailableForAttackCell || isAvailableCell}
             {cell.figure?.icon && <img src={cell.figure.icon} alt={cell.figure.name}/>}

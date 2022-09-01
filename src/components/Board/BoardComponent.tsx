@@ -16,8 +16,12 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard}) => {
         highlightAvailableCells();
     }, [selectedCell]);
 
-    function selectCellOnClick(cell: Cell) {
-        if (cell.figure) {
+    function clickOnCell(cell: Cell) {
+        if (selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
+            selectedCell.moveFigure(cell);
+            setSelectedCell(null);
+            boardUpdate();
+        } else {
             setSelectedCell(cell);
         }
     }
@@ -46,7 +50,7 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard}) => {
                                     <CellComponent cell={cell}
                                                    key={cell.id}
                                                    selected={isSelectedCell}
-                                                   selectCell={selectCellOnClick}
+                                                   clickOnCell={clickOnCell}
                                     />
                                 );
                             })
