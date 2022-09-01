@@ -29,6 +29,14 @@ export class Cell {
         this.id = nanoid(10);
     }
 
+    isEnemy(target: Cell): boolean {
+        if (target.figure) {
+            return this.figure?.color !== target.figure.color;
+        }
+
+        return false;
+    }
+
     isEmptyCell(): boolean {
         return this.figure === null;
     }

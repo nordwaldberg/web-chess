@@ -11,4 +11,15 @@ export class Knight extends Figure {
         this.icon = color === Colors.BLACK ? blackIcon : whiteIcon;
         this.name = FiguresNames.KNIGHT;
     }
+
+    canMove(target: Cell): boolean {
+        if(!super.canMove(target)) {
+            return false;
+        }
+
+        const dX = Math.abs(this.cell.coordinateX - target.coordinateX);
+        const dY = Math.abs(this.cell.coordinateY - target.coordinateY);
+
+        return (dX === 2 && dY === 1) || (dX === 1 && dY === 2);
+    }
 }

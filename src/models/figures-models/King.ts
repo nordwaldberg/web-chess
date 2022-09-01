@@ -12,4 +12,17 @@ export class King extends Figure {
         this.icon = color === Colors.BLACK ? blackIcon : whiteIcon;
         this.name = FiguresNames.KING;
     }
+
+    canMove(target: Cell): boolean {
+        if(!super.canMove(target)) {
+            return false;
+        }
+
+        const dX = Math.abs(this.cell.coordinateX - target.coordinateX);
+        const dY = Math.abs(this.cell.coordinateY - target.coordinateY);
+
+        return (dX === 1 && dY === 0)
+            || (dX === 0 && dY === 1)
+            || (dX === 1 && dY === 1);
+    }
 }
