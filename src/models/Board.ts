@@ -17,10 +17,10 @@ export class Board {
             for (let j = 0; j < 8; j++) {
 
                 if ((i + j) % 2 !== 0) {
-                    const blackCell = new Cell(this, i, j, Colors.BLACK, null);
+                    const blackCell = new Cell(this, j, i, Colors.BLACK, null);
                     row.push(blackCell);
                 } else {
-                    const whiteCell = new Cell(this, i, j, Colors.WHITE, null);
+                    const whiteCell = new Cell(this, j, i, Colors.WHITE, null);
                     row.push(whiteCell);
                 }
             }
