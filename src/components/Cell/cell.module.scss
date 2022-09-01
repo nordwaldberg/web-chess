@@ -11,6 +11,7 @@
 .cell img {
   width: $icon-width;
   height: $icon-height;
+  position: absolute;
 }
 
 .black {
@@ -19,4 +20,23 @@
 
 .white {
   background-color: $light-color;
+}
+
+.selected {
+  background-color: $selected-cell-color;
+}
+
+.available {
+  width: $cell-width;
+  height: $cell-height;
+  background-color: $available-cell-color;
+  opacity: .5;
+}
+
+.availableForAttack {
+  width: $cell-width;
+  height: $cell-height;
+  position: absolute;
+  background-color: $available-for-attack-cell-color;
+  opacity: .5;
 }

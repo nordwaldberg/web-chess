@@ -1,4 +1,4 @@
-import React, {FC, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import styles from './board.module.scss';
 import CellComponent from "../Cell/CellComponent";
 import {Board} from "../../models/Board";
@@ -11,6 +11,10 @@ interface BoardProps {
 
 const BoardComponent: FC<BoardProps> = ({board, setBoard}) => {
     const [selectedCell, setSelectedCell] = useState<Cell | null>(null);
+
+    useEffect(() => {
+        highlightAvailableCells();
+    }, [selectedCell]);
 
     function selectCellOnClick(cell: Cell) {
         if (cell.figure) {
