@@ -1,6 +1,6 @@
 import figureIcon from "../../assets/black-figures/black-bishop.png";
 import {Colors} from "../Colors";
-import {CellModel} from "../CellModel";
+import {Cell} from "../Cell";
 import {nanoid} from "nanoid";
 
 export enum FiguresNames {
@@ -16,11 +16,11 @@ export enum FiguresNames {
 export class Figure {
     color: Colors;
     icon: typeof figureIcon | null;
-    cell: CellModel;
+    cell: Cell;
     name: FiguresNames;
     id: string;
 
-    constructor(color: Colors, cell: CellModel) {
+    constructor(color: Colors, cell: Cell) {
         this.color = color;
         this.cell = cell;
         this.cell.figure = this;
@@ -29,12 +29,12 @@ export class Figure {
         this.id = nanoid(10);
     }
 
-    canMove(target: CellModel): boolean {
+    canMove(target: Cell): boolean {
         return true;
     }
 
-    moveFigure(target: CellModel) {
-        
+    moveFigure(target: Cell) {
+
     }
 }
 

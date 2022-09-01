@@ -1,20 +1,20 @@
 import {Colors} from "./Colors";
 import {Figure} from "./figures-models/Figure";
-import {BoardModel} from "./BoardModel";
+import {Board} from "./Board";
 import {nanoid} from "nanoid";
 
-export class CellModel {
+export class Cell {
     readonly coordinateX: number;
     readonly coordinateY: number;
     readonly color: Colors;
     figure: Figure | null;
-    board: BoardModel;
+    board: Board;
 
     avaliable: boolean;
     id: string;
 
     constructor(
-        board: BoardModel,
+        board: Board,
         x: number,
         y: number,
         color: Colors,

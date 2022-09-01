@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import styles from './App.module.scss';
-import Board from "./components/Board/Board";
-import {BoardModel} from "./models/BoardModel";
+import BoardComponent from "./components/Board/BoardComponent";
+import {Board} from "./models/Board";
 
 function App() {
-    const [board, setBoard] = useState(new BoardModel());
+    const [board, setBoard] = useState(new Board());
 
     useEffect(() => {
         restart();
     }, []);
 
     function restart() {
-        const newBoard = new BoardModel();
+        const newBoard = new Board();
         newBoard.InitCells();
         newBoard.addFigures();
         setBoard(newBoard);
@@ -19,7 +19,7 @@ function App() {
 
     return (
         <div className={styles.app}>
-            <Board board={board} setBoard={setBoard}/>
+            <BoardComponent board={board} setBoard={setBoard}/>
         </div>
     );
 }

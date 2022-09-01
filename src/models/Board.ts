@@ -1,4 +1,4 @@
-import {CellModel} from "./CellModel";
+import {Cell} from "./Cell";
 import {Colors} from "./Colors";
 import {Queen} from "./figures-models/Queen";
 import {King} from "./figures-models/King";
@@ -7,20 +7,20 @@ import {Knight} from "./figures-models/Knight";
 import {Rook} from "./figures-models/Rook";
 import {Pawn} from "./figures-models/Pawn";
 
-export class BoardModel {
-    cells: CellModel[][] = [];
+export class Board {
+    cells: Cell[][] = [];
 
     public InitCells() {
         for (let i = 0; i < 8; i++) {
-            const row: CellModel[] = [];
+            const row: Cell[] = [];
 
             for (let j = 0; j < 8; j++) {
 
                 if ((i + j) % 2 !== 0) {
-                    const blackCell = new CellModel(this, i, j, Colors.BLACK, null);
+                    const blackCell = new Cell(this, i, j, Colors.BLACK, null);
                     row.push(blackCell);
                 } else {
-                    const whiteCell = new CellModel(this, i, j, Colors.WHITE, null);
+                    const whiteCell = new Cell(this, i, j, Colors.WHITE, null);
                     row.push(whiteCell);
                 }
             }
@@ -30,6 +30,24 @@ export class BoardModel {
 
     public getCell(x: number, y: number) {
         return this.cells[y][x];
+    }
+
+    public getAvailableCells(selectedCell: Cell | null) {
+        for (let i = 0; i < this.cells.length; i++) {
+            const row = this.cells[i];
+            for (let j = 0; j < row.length; j++) {
+                const target = row[j];
+
+                target.avaliable = !!selectedCell?.figure?.canMove(target);
+            }
+        }
+    }
+
+    public getCopyOfBoard(): Board {
+        const copyBoard = new Board();
+        copyBoard.cells = this.cells;
+
+        return copyBoard;
     }
 
     private getFigures(figures: [Colors, [number, number]][], figuresConstructor: any) {
