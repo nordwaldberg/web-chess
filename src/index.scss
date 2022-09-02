@@ -25,3 +25,8 @@ html, body {
 }
 
 #root {}
+
+@mixin glassmorphism {
+    background-color: rgba(236, 240, 241, .3);
+    border-radius: 5px;
+}

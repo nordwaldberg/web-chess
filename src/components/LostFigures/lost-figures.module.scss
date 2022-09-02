@@ -1,0 +1,22 @@
+@import "src/index.scss";
+
+.lostFigureInfoBoard {
+  height: 45%;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.lostFigureInfo {
+  display: flex;
+}
+
+.lostFigureInfo img {
+  height: 20px;
+  width: 20px;
+  align-self: center;
+  margin-left: 10px;
+}
+
+.title {
+  margin-bottom: 20px;
+}

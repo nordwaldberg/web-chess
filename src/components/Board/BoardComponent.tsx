@@ -4,6 +4,7 @@ import CellComponent from "../Cell/CellComponent";
 import {Board} from "../../models/Board";
 import {Cell} from "../../models/Cell";
 import {Player} from "../../models/Player";
+import LostFigures from "../LostFigures/LostFigures";
 
 interface BoardProps {
     board: Board,
@@ -48,8 +49,12 @@ const BoardComponent: FC<BoardProps> = ({
 
     return (
         <>
-            <div className={styles.infoBoard}>
-                <h2>{`Current Player is ${currentPlayer?.color}`}</h2>
+            <div className={styles.info}>
+                <h2 className={styles.infoBoardTitle}>{`Current Player is: ${currentPlayer?.color}`}</h2>
+                <div className={styles.lostFiguresInfoBoard}>
+                    <LostFigures title={'Blacks:'} figures={board.lostBlackFigures}/>
+                    <LostFigures title={'Whites:'} figures={board.lostWhiteFigures}/>
+                </div>
             </div>
             <div className={styles.board}>
                 {

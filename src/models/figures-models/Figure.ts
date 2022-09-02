@@ -4,13 +4,13 @@ import {Cell} from "../Cell";
 import {nanoid} from "nanoid";
 
 export enum FiguresNames {
-    FIGURE = 'figure',
-    QUEEN = 'queen',
-    KING = 'king',
-    BISHOP = 'bishop',
-    ROOK = 'rook',
-    KNIGHT = 'knight',
-    PAWN = 'pawn',
+    FIGURE = 'Figure',
+    QUEEN = 'Queen',
+    KING = 'King',
+    BISHOP = 'Bishop',
+    ROOK = 'Rook',
+    KNIGHT = 'Knight',
+    PAWN = 'Pawn',
 }
 
 export class Figure {
