@@ -9,6 +9,7 @@ $cell-width: 80px;
 $cell-height: 80px;
 $icon-width: 65px;
 $icon-height: 65px;
+$header-font-size: 20px;
 
 /*reset*/
 
@@ -20,6 +21,7 @@ $icon-height: 65px;
 
 html, body {
     background-color: $main-color;
+    font-family: "JetBrains Mono", sans-serif;
 }
 
 #root {}

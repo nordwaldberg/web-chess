@@ -6,3 +6,12 @@
   width: calc($cell-width * 8);
   height: calc($cell-height * 8);
 }
+
+.infoBoard {
+  color: $light-color;
+  margin-right: 50px;
+}
+
+.infoBoard h2{
+  font-size: $header-font-size;
+}
