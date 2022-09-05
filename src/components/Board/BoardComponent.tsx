@@ -48,37 +48,28 @@ const BoardComponent: FC<BoardProps> = ({
     }
 
     return (
-        <>
-            <div className={styles.info}>
-                <h2 className={styles.infoBoardTitle}>{`Current Player is: ${currentPlayer?.color}`}</h2>
-                <div className={styles.lostFiguresInfoBoard}>
-                    <LostFigures title={'Blacks:'} figures={board.lostBlackFigures}/>
-                    <LostFigures title={'Whites:'} figures={board.lostWhiteFigures}/>
-                </div>
-            </div>
-            <div className={styles.board}>
-                {
-                    board.cells.map((row, index) =>
-                        <React.Fragment key={index}>
-                            {
-                                row.map((cell) => {
-                                    const isSelectedCell = cell.coordinateX === selectedCell?.coordinateX
-                                        && cell.coordinateY === selectedCell?.coordinateY
+        <div className={styles.board}>
+            {
+                board.cells.map((row, index) =>
+                    <React.Fragment key={index}>
+                        {
+                            row.map((cell) => {
+                                const isSelectedCell = cell.coordinateX === selectedCell?.coordinateX
+                                    && cell.coordinateY === selectedCell?.coordinateY
 
-                                    return (
-                                        <CellComponent cell={cell}
-                                                       key={cell.id}
-                                                       selected={isSelectedCell}
-                                                       clickOnCell={clickOnCell}
-                                        />
-                                    );
-                                })
-                            }
-                        </React.Fragment>
-                    )
-                }
-            </div>
-        </>
+                                return (
+                                    <CellComponent cell={cell}
+                                                   key={cell.id}
+                                                   selected={isSelectedCell}
+                                                   clickOnCell={clickOnCell}
+                                    />
+                                );
+                            })
+                        }
+                    </React.Fragment>
+                )
+            }
+        </div>
     );
 };
 

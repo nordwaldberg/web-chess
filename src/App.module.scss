@@ -10,6 +10,7 @@
 }
 
 .info {
+  z-index: 2;
   height: calc($cell-height * 8);
   margin-left: 25px;
 }

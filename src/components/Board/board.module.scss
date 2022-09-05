@@ -6,27 +6,3 @@
   width: calc($cell-width * 8);
   height: calc($cell-height * 8);
 }
-
-.info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: calc($cell-height * 8);
-  margin-right: 50px;
-}
-
-.info h2 {
-  font-size: $header-font-size;
-}
-
-.infoBoardTitle {
-  height: 10%;
-  padding: 20px;
-  @include glassmorphism;
-}
-
-.lostFiguresInfoBoard {
-  height: 85%;
-  padding: 20px;
-  @include glassmorphism;
-}
