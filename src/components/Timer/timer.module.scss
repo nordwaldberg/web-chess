@@ -1,0 +1,25 @@
+@import "src/index.scss";
+
+.timer {
+}
+
+.timerButtons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.timerBtn {
+  font-size: 15px;
+  padding: 8px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.timerBtn:hover {
+  background-color: $selected-cell-color;
+  color: $light-color;
+  transition: 500ms;
+}
+

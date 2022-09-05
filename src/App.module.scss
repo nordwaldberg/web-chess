@@ -6,5 +6,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("./assets/background-pattern.svg");
 }
 
+.info {
+  height: calc($cell-height * 8);
+  margin-left: 25px;
+}
+
+.info h2 {
+  font-size: $header-font-size;
+}
+
+.infoBoardTitle {
+  padding: 20px;
+  margin-bottom: 25px;
+  @include glassmorphism;
+}
+
+.lostFiguresInfoBoard {
+  height: calc($cell-height * 8);
+  margin-right: 25px;
+  padding: 20px;
+  @include glassmorphism;
+}
+
+.timer {
+  padding: 20px;
+  @include glassmorphism;
+}

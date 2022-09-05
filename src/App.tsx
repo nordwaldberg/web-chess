@@ -4,6 +4,8 @@ import BoardComponent from "./components/Board/BoardComponent";
 import {Board} from "./models/Board";
 import {Player} from "./models/Player";
 import {Colors} from "./models/Colors";
+import LostFigures from "./components/LostFigures/LostFigures";
+import Timer from "./components/Timer/Timer";
 
 function App() {
     const [board, setBoard] = useState(new Board());
@@ -25,15 +27,26 @@ function App() {
         newBoard.InitCells();
         newBoard.addFigures();
         setBoard(newBoard);
+        setCurrentPlayer(whitePlayer);
     }
 
     return (
         <div className={styles.app}>
+            <div className={styles.lostFiguresInfoBoard}>
+                <LostFigures title={'Blacks:'} figures={board.lostBlackFigures}/>
+                <LostFigures title={'Whites:'} figures={board.lostWhiteFigures}/>
+            </div>
             <BoardComponent board={board}
                             setBoard={setBoard}
                             currentPlayer={currentPlayer}
                             changePlayer={changePlayer}
             />
+            <div className={styles.info}>
+                <h2 className={styles.infoBoardTitle}>{`Current Player is: ${currentPlayer?.color}`}</h2>
+                <div className={styles.timer}>
+                    <Timer restart={restart}/>
+                </div>
+            </div>
         </div>
     );
 }
