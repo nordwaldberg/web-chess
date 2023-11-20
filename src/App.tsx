@@ -32,21 +32,24 @@ function App() {
 
     return (
         <div className={styles.app}>
-            {/*<div className={styles.lostFiguresInfoBoard}>*/}
-            {/*    <LostFigures title={'Blacks:'} figures={board.lostBlackFigures}/>*/}
-            {/*    <LostFigures title={'Whites:'} figures={board.lostWhiteFigures}/>*/}
-            {/*</div>*/}
+            <div className={styles.info}>
+                <h2 className={styles.infoBoardTitle}>{`Current Player is: ${
+                    currentPlayer?.color === 'white' ?
+                        'White' : 'Black'
+                }`}</h2>
+                <div className={styles.timer}>
+                    <Timer restart={restart}/>
+                </div>
+            </div>
             <BoardComponent board={board}
                             setBoard={setBoard}
                             currentPlayer={currentPlayer}
                             changePlayer={changePlayer}
             />
-            {/*<div className={styles.info}>*/}
-            {/*    <h2 className={styles.infoBoardTitle}>{`Current Player is: ${currentPlayer?.color}`}</h2>*/}
-            {/*    <div className={styles.timer}>*/}
-            {/*        <Timer restart={restart}/>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            <div className={styles.lostFiguresInfoBoard}>
+                <LostFigures title={'Black player lost:'} figures={board.lostBlackFigures}/>
+                <LostFigures title={'White player lost:'} figures={board.lostWhiteFigures}/>
+            </div>
         </div>
     );
 }

@@ -55,8 +55,8 @@ const Timer: FC<TimerProps> = ({restart}) => {
 
     return (
         <div className={styles.timer}>
-            <h2>{`Black's time: ${blackTime}`}</h2>
-            <h2>{`White's time: ${whiteTime}`}</h2>
+            <h2 className={styles.titles}>{`Black's time: ${blackTime}`}</h2>
+            <h2 className={styles.titles}>{`White's time: ${whiteTime}`}</h2>
             <div className={styles.timerButtons}>
                 <button className={styles.timerBtn}
                         onClick={handleBlackBtn}>

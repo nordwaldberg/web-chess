@@ -14,11 +14,22 @@
   margin-bottom: 20px;
   border-radius: 5px;
   border: none;
+
+  &:nth-last-of-type(1) {
+    margin-bottom: 0;
+  }
 }
 
 .timerBtn:hover {
   background-color: $selected-cell-color;
   color: $light-color;
-  transition: 500ms;
+  transition: 100ms;
 }
 
+.titles {
+  margin-bottom: 20px;
+
+  &:nth-last-of-type(1) {
+    margin-bottom: 0;
+  }
+}
