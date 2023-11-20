@@ -69,6 +69,17 @@ const BoardComponent: FC<BoardProps> = ({
                     </React.Fragment>
                 )
             }
+            <li className={styles.letters}>
+                {
+                    ['A','B','C','D','I','F','G','H'].map((letter, index) => {
+                        return (
+                            <ul
+                                key={index}
+                            >{letter}</ul>
+                        )
+                    })
+                }
+            </li>
         </div>
     );
 };
