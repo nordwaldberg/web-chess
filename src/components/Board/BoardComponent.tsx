@@ -48,34 +48,47 @@ const BoardComponent: FC<BoardProps> = ({
     }
 
     return (
-        <div className={styles.board}>
-            {
-                board.cells.map((row, index) =>
-                    <React.Fragment key={index}>
-                        {
-                            row.map((cell) => {
-                                const isSelectedCell = cell.coordinateX === selectedCell?.coordinateX
-                                    && cell.coordinateY === selectedCell?.coordinateY
-
-                                return (
-                                    <CellComponent cell={cell}
-                                                   key={cell.id}
-                                                   selected={isSelectedCell}
-                                                   clickOnCell={clickOnCell}
-                                    />
-                                );
-                            })
-                        }
-                    </React.Fragment>
-                )
-            }
-            <li className={styles.letters}>
+        <div className={styles.main}>
+            <div className={styles.board}>
                 {
-                    ['A','B','C','D','I','F','G','H'].map((letter, index) => {
+                    board.cells.map((row, index) =>
+                        <React.Fragment key={index}>
+                            {
+                                row.map((cell) => {
+                                    const isSelectedCell = cell.coordinateX === selectedCell?.coordinateX
+                                        && cell.coordinateY === selectedCell?.coordinateY
+
+                                    return (
+                                        <CellComponent cell={cell}
+                                                       key={cell.id}
+                                                       selected={isSelectedCell}
+                                                       clickOnCell={clickOnCell}
+                                        />
+                                    );
+                                })
+                            }
+                        </React.Fragment>
+                    )
+                }
+                <li className={styles.letters}>
+                    {
+                        ['A', 'B', 'C', 'D', 'I', 'F', 'G', 'H'].map((letter, index) => {
+                            return (
+                                <ul
+                                    key={index}
+                                >{letter}</ul>
+                            )
+                        })
+                    }
+                </li>
+            </div>
+            <li className={styles.numbers}>
+                {
+                    [1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => {
                         return (
                             <ul
                                 key={index}
-                            >{letter}</ul>
+                            >{num}</ul>
                         )
                     })
                 }
